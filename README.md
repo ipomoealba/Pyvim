@@ -1,6 +1,6 @@
 Pyvim - More Easy use vim in python  
 ======
-##### it is my vim settings for python programming
+it is my vim settings for python programming
 
 Install 
 --------
