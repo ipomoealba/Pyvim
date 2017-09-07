@@ -75,14 +75,14 @@ w!!
 
 Maybe need to install 
 ---------------------
->[Powerline fonts](https://github.com/powerline/fonts)  https://github.com/powerline/fonts <br>
->[Ctags](http://ctags.sourceforge.net)  http://ctags.sourceforge.net
+> Powerline fonts &nbsp[https://github.com/powerline/fonts](https://github.com/powerline/fonts) <br>
+> Ctags &nbsp[http://ctags.sourceforge.net](http://ctags.sourceforge.net)
 
 
 
 Reference
 ---------
-[YouComplete Me](https://github.com/Valloric/YouCompleteMe)<br>
-[Awesome Vim](https://github.com/amix/vimrc)<br>
-[Fisa vim config](https://github.com/fisadev/fisa-vim-config/)<br>
+> YouComplete Me &nbsp[https://github.com/Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe)<br>
+> Awesome Vim &nbsp[https://github.com/amix/vimrc](https://github.com/amix/vimrc)<br>
+> Fisa vim config &nbsp[https://github.com/fisadev/fisa-vim-config/](https://github.com/fisadev/fisa-vim-config/)<br>
 
