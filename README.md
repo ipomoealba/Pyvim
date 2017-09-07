@@ -78,95 +78,95 @@ Installed Packeges
 ------------------
 
 * Ctags
-Plug 'vim-scripts/taglist.vim'
-* Plugins from github repos:
-Plug 'Chiel92/vim-autoformat'
-Plug 'nathanaelkane/vim-indent-guides'
+ 'vim-scripts/taglist.vim'
+* ins from github repos:
+ 'Chiel92/vim-autoformat'
+ 'nathanaelkane/vim-indent-guides'
 * Override configs by directory
-Plug 'arielrossanigo/dir-configs-override.vim'
+ 'arielrossanigo/dir-configs-override.vim'
 * Better file browser
-Plug 'scrooloose/nerdtree'
+ 'scrooloose/nerdtree'
 * Code commenter
-Plug 'scrooloose/nerdcommenter'
+ 'scrooloose/nerdcommenter'
 * Class/module browser
-Plug 'majutsushi/tagbar'
+ 'majutsushi/tagbar'
 * Code and files fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
+ 'ctrlpvim/ctrlp.vim'
 * Extension to ctrlp, for fuzzy command finder
-Plug 'fisadev/vim-ctrlp-cmdpalette'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+ 'fisadev/vim-ctrlp-cmdpalette'
+ 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+ 'junegunn/fzf.vim'
 * Task List 
-Plug 'vim-scripts/TaskList.vim'
+ 'vim-scripts/TaskList.vim'
 * Zen coding
-Plug 'mattn/emmet-vim'
+ 'mattn/emmet-vim'
 * Git integration
-Plug 'motemen/git-vim'
+ 'motemen/git-vim'
 * Tab list panel
-Plug 'kien/tabman.vim'
+ 'kien/tabman.vim'
 * Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+ 'vim-airline/vim-airline'
+ 'vim-airline/vim-airline-themes'
 * darcula theme
-Plug 'dracula/vim'
+ 'dracula/vim'
 * Terminal Vim with 256 colors colorscheme
-Plug 'fisadev/fisa-vim-colorscheme'
+ 'fisadev/fisa-vim-colorscheme'
 * Surround
-Plug 'tpope/vim-surround'
+ 'tpope/vim-surround'
 * Indent text object
-Plug 'michaeljsmith/vim-indent-object'
+ 'michaeljsmith/vim-indent-object'
 * Python autocompletion, go to definition.
-Plug 'davidhalter/jedi-vim'
-Plug 'SirVer/ultisnips'
+ 'davidhalter/jedi-vim'
+ 'SirVer/ultisnips'
 * Snippets manager (SnipMate), dependencies, and snippets repo
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'honza/vim-snippets'
-Plug 'garbas/vim-snipmate'
+ 'MarcWeber/vim-addon-mw-utils'
+ 'tomtom/tlib_vim'
+ 'honza/vim-snippets'
+ 'garbas/vim-snipmate'
 * Git/mercurial/others diff icons on the side of the file lines
-Plug 'mhinz/vim-signify'
+ 'mhinz/vim-signify'
 * Automatically sort python imports
-Plug 'fisadev/vim-isort'
+ 'fisadev/vim-isort'
 * Drag visual blocks arround
-Plug 'fisadev/dragvisuals.vim'
+ 'fisadev/dragvisuals.vim'
 * Window chooser
-Plug 't9md/vim-choosewin'
+ 't9md/vim-choosewin'
 * Python and other languages code checker
-Plug 'scrooloose/syntastic'
+ 'scrooloose/syntastic'
 * Ack code search (requires ack installed in the system)
-Plug 'mileszs/ack.vim'
+ 'mileszs/ack.vim'
 * gitgutter
-Plug 'airblade/vim-gitgutter'
+ 'airblade/vim-gitgutter'
 * csv.vim
-Plug 'chrisbra/csv.vim'
+ 'chrisbra/csv.vim'
 * Folder
-Plug 'tmhedberg/SimpylFold'
+ 'tmhedberg/SimpylFold'
 * vim pep8
-Plug 'tell-k/vim-autopep8'
+ 'tell-k/vim-autopep8'
 * css highlight
-Plug 'hail2u/vim-css3-syntax'
+ 'hail2u/vim-css3-syntax'
 * css color visualization
-Plug 'ap/vim-css-color'
+ 'ap/vim-css-color'
 * js highlight
-Plug 'pangloss/vim-javascript'
+ 'pangloss/vim-javascript'
 * html5 complete
-Plug 'othree/html5.vim'
+ 'othree/html5.vim'
 * auto pairs
-Plug 'jiangmiao/auto-pairs'
+ 'jiangmiao/auto-pairs'
 * auto complete
-Plug 'Valloric/YouCompleteMe'
+ 'Valloric/YouCompleteMe'
 * animate when vim start
-Plug 'mhinz/vim-startify'
+ 'mhinz/vim-startify'
 * YAPF formatter for Python
-Plug 'pignacio/vim-yapf-format'
+ 'pignacio/vim-yapf-format'
 * Search results counter
-Plug 'vim-scripts/IndexedSearch'
+ 'vim-scripts/IndexedSearch'
 * XML/HTML tags navigation
-Plug 'vim-scripts/matchit.zip'
+ 'vim-scripts/matchit.zip'
 * Gvim colorscheme
-Plug 'vim-scripts/Wombat'
+ 'vim-scripts/Wombat'
 * Yank history navigation
-Plug 'vim-scripts/YankRing.vim'
+ 'vim-scripts/YankRing.vim'
 Maybe need to install 
 ---------------------
 > Powerline fonts [https://github.com/powerline/fonts](https://github.com/powerline/fonts) <br>
