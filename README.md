@@ -34,33 +34,56 @@ Default install all language as it support.
 If you have any problem, just see here. 
 ## [YouComplete Me](https://github.com/Valloric/YouCompleteMe)
 
-### Others
+###Emmet
+```
+<C-e>
+```
 
+
+### Others
 #### Save file as sudo 
 ```
 w!!
-``` 
+```
+### KeyMaps
+
+#### Global Mode
+* Search File \(Crtlp\)
+`,e`
+* Comment \(NerdCommenter\)
+`<leader>cc` 
+* Fold Code 
+`<space>`
+* Task List
+`<F2>`
 * Open NerdTree
 `<F3>`
 * Open Taglist
 `<F4>`
 * Auto Format 
 `<F6>`
+
+#### Python Mode
 * Run Python 
 `<F9>`
-* Run Python in Debug mode (pdb)
+* Run Python in Debug mode \(pdb\)
 `<F10>`
+* Go to Command 
+`,d`
+* Usage Command 
+`,o`
+
 
 Maybe need to install 
 ---------------------
->[Powerline fonts](https://github.com/powerline/fonts)https://github.com/powerline/fonts <br>
->[Ctags](http://ctags.sourceforge.net)http://ctags.sourceforge.net
+>[Powerline fonts](https://github.com/powerline/fonts)  https://github.com/powerline/fonts <br>
+>[Ctags](http://ctags.sourceforge.net)  http://ctags.sourceforge.net
 
 
 
 Reference
 ---------
-[YouComplete Me](https://github.com/Valloric/YouCompleteMe)
-[Awesome Vim](https://github.com/amix/vimrc)
-[Fisa vim config](https://github.com/fisadev/fisa-vim-config/)
+[YouComplete Me](https://github.com/Valloric/YouCompleteMe)<br>
+[Awesome Vim](https://github.com/amix/vimrc)<br>
+[Fisa vim config](https://github.com/fisadev/fisa-vim-config/)<br>
 

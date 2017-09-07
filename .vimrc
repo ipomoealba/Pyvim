@@ -86,6 +86,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fisadev/vim-ctrlp-cmdpalette'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Task List 
+Plug 'vim-scripts/TaskList.vim'
 " Zen coding
 Plug 'mattn/emmet-vim'
 " Git integration
