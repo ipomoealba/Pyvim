@@ -29,11 +29,11 @@ mv .vimrc .vimrc_old
 
 How to Use?
 ----------
-###[YouComplete Me](https://github.com/Valloric/YouCompleteMe)
+### [YouComplete Me](https://github.com/Valloric/YouCompleteMe)
 Default install all language as it support.
 If you have any problem, just see here. 
 
-###[Emmet](https://docs.emmet.io)
+### [Emmet](https://docs.emmet.io)
 ```
 <C-e>
 ```
