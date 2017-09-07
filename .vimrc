@@ -145,7 +145,6 @@ Plug 'othree/html5.vim'
 Plug 'jiangmiao/auto-pairs'
 " auto complete
 Plug 'Valloric/YouCompleteMe'
-silent !python ~/.vim/plugged/YouCompleteMe/install.py -all
 " animate when vim start
 Plug 'mhinz/vim-startify'
 
