@@ -29,16 +29,14 @@ mv .vimrc .vimrc_old
 
 How to Use?
 ----------
-### YouComplete
+###[YouComplete Me](https://github.com/Valloric/YouCompleteMe)
 Default install all language as it support.
 If you have any problem, just see here. 
-## [YouComplete Me](https://github.com/Valloric/YouCompleteMe)
 
-###Emmet
+###[Emmet](https://docs.emmet.io)
 ```
 <C-e>
 ```
-
 
 ### Others
 #### Save file as sudo 
@@ -73,6 +71,7 @@ w!!
 * Usage Command 
 `,o`
 
+> There is a lot of keymaps in my settings, but I lazy to breakdown all. Just see the ~/.vimrc file. :P
 
 Maybe need to install 
 ---------------------
