@@ -8,7 +8,7 @@ Install
 wget clone https://raw.githubusercontent.com/ipomoealba/Pyvim/master/.vimrc ~/.vimrc
 ``` 
 
-and just open your terminal, enter `vim` and wait for it 
+and just open your terminal, enter `vim` and wait for it <br> 
 At the end, you should read [this](https://github.com/Valloric/YouCompleteMe) too choose what kinds of language you want to support autocomplete and install packages
 for example:
 if I want to support all C-family languages, I just enter 
