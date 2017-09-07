@@ -29,26 +29,26 @@ mv .vimrc .vimrc_old
 
 How to Use?
 ----------
-###YouComplete
+### YouComplete
 Default install all language as it support.
 If you have any problem, just see here. 
-##[YouComplete Me](https://github.com/Valloric/YouCompleteMe)
+## [YouComplete Me](https://github.com/Valloric/YouCompleteMe)
 
-###Others
+### Others
 
-####Save file as sudo 
+#### Save file as sudo 
 ```
 w!!
 ``` 
-*Open NerdTree
+* Open NerdTree
 `<F3>`
-*Open Taglist
+* Open Taglist
 `<F4>`
-*Auto Format 
+* Auto Format 
 `<F6>`
-*Run Python 
+* Run Python 
 `<F9>`
-*Run Python in Debug mode (pdb)
+* Run Python in Debug mode (pdb)
 `<F10>`
 
 Maybe need to install 
