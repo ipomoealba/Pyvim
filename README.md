@@ -167,6 +167,8 @@ Installed Packeges
  'vim-scripts/Wombat'
 * Yank history navigation
  'vim-scripts/YankRing.vim'
+
+
 Maybe need to install 
 ---------------------
 > Powerline fonts [https://github.com/powerline/fonts](https://github.com/powerline/fonts) <br>
