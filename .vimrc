@@ -1,13 +1,15 @@
-" ============================================================================
+" Author: Chen Hua Wei
+" ===========================================================================
 " Vim-plug initialization
 set encoding=utf-8
 set clipboard=unnamed
+set mouse=a
 set backspace=indent,eol,start
-
+set guifont=Noto\ Mono\ for\ Powerline:h12
 " Highlight the cursor
 set cursorcolumn
 set cursorline
-
+colorscheme default
 " Set search Option
 set ignorecase
 set smartcase
@@ -30,10 +32,13 @@ set nu
 
 " save as sudo
 ca w!! w !sudo tee "%"
-
-" colors for gvim
-if has('gui_running')
-    colorscheme wombat
+if has("gui_running")
+  syntax on
+  set hlsearch
+  colorscheme macvim
+  set bs=2
+  set ai
+  set ruler
 endif
 
 " when scrolling, keep cursor 3 lines away from screen border
@@ -88,6 +93,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Task List 
 Plug 'vim-scripts/TaskList.vim'
+" vim go 
+Plug 'fatih/vim-go'
 " Zen coding
 Plug 'mattn/emmet-vim'
 " Git integration
@@ -97,8 +104,6 @@ Plug 'kien/tabman.vim'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" darcula theme
-Plug 'dracula/vim'
 " Terminal Vim with 256 colors colorscheme
 Plug 'fisadev/fisa-vim-colorscheme'
 " Surround
@@ -145,9 +150,6 @@ Plug 'othree/html5.vim'
 Plug 'jiangmiao/auto-pairs'
 " auto complete
 Plug 'Valloric/YouCompleteMe'
-" animate when vim start
-Plug 'mhinz/vim-startify'
-
 if has('python')
     " YAPF formatter for Python
     Plug 'pignacio/vim-yapf-format'
@@ -460,9 +462,6 @@ nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
 
-" ============================================================================
-" Darcula Start
-color dracula
 
 " ============================================================================
 " Airline
@@ -484,10 +483,9 @@ inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDow
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <F7> :YcmForceCompileAndDiagnostics<CR>	"force recomile with syntastic
-" nnoremap <leader>lo :lopen<CR>	"open locationlist
-" nnoremap <leader>lc :lclose<CR>	"close locationlist
+nnoremap <leader>lo :lopen<CR>	"open locationlist
+nnoremap <leader>lc :lclose<CR>	"close locationlist
 inoremap <leader><leader> <C-x><C-o>
-" let g:ycm_global_ycm_extra_conf = '~/.vim/data/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
@@ -500,18 +498,26 @@ let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
       \ 'nerdtree' : 1,
       \}
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsListSnippets="<c-e>"
-let g:UltiSnipsSnippetDirectories=["bundle/vim-snippets/UltiSnips"]
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsListSnippets="<c-e>"
+" let g:UltiSnipsSnippetDirectories=["bundle/vim-snippets/UltiSnips"]
+" ret g:ycm_python_binary_path = 'python3'
 let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
 let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_python_binary_path = 'python'
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
+" ============================================================================
+" Vim go 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" let g:go_fmt_command = "goimports"
 
 " ============================================================================
 " better backup, swap and undos storage
