@@ -1,15 +1,17 @@
 " Author: Chen Hua Wei
 " ===========================================================================
 " Vim-plug initialization
+
 set encoding=utf-8
 set clipboard=unnamed
+set shortmess+=c 
 set mouse=a
 set backspace=indent,eol,start
 set guifont=Noto\ Mono\ for\ Powerline:h12
 " Highlight the cursor
 set cursorcolumn
 set cursorline
-colorscheme default
+colorscheme vividchalk
 " Set search Option
 set ignorecase
 set smartcase
@@ -30,19 +32,24 @@ set nu
 " link: https://github.com/powerline/fonts
 " set guifont=Noto\ Mono\ for\ Powerline:h12
 
+
 " save as sudo
 ca w!! w !sudo tee "%"
 if has("gui_running")
-  syntax on
-  set hlsearch
-  colorscheme macvim
-  set bs=2
-  set ai
-  set ruler
+    syntax on
+    set hlsearch
+    colorscheme vividchalk
+    set bs=2
+    set ai
+    set ruler
 endif
 
 " when scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
+
+" Too hex Code 
+nmap ,h :%! xxd <CR>
+nmap ,n :%! xxd -r <CR>
 
 " ============================================================================
 autocmd VimEnter set shortmess-=c
@@ -71,7 +78,8 @@ endif
 " this needs to be here, so vim-plug knows we are declaring the plugins we
 " want to use
 call plug#begin('~/.vim/plugged')
-
+" theme
+Plug 'tpope/vim-vividchalk'
 " Ctags
 Plug 'vim-scripts/taglist.vim'
 " Plugins from github repos:
@@ -91,9 +99,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fisadev/vim-ctrlp-cmdpalette'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Task List 
+" Task List
 Plug 'vim-scripts/TaskList.vim'
-" vim go 
+" vim go
 Plug 'fatih/vim-go'
 " Zen coding
 Plug 'mattn/emmet-vim'
@@ -128,10 +136,9 @@ Plug 'fisadev/dragvisuals.vim'
 Plug 't9md/vim-choosewin'
 " Python and other languages code checker
 Plug 'scrooloose/syntastic'
-" Ack code search (requires ack installed in the system)
-Plug 'mileszs/ack.vim'
 " gitgutter
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 " csv.vim
 Plug 'chrisbra/csv.vim'
 " Folder
@@ -150,6 +157,8 @@ Plug 'othree/html5.vim'
 Plug 'jiangmiao/auto-pairs'
 " auto complete
 Plug 'Valloric/YouCompleteMe'
+"   
+Plug 'plytophogy/vim-virtualenv'
 if has('python')
     " YAPF formatter for Python
     Plug 'pignacio/vim-yapf-format'
@@ -162,8 +171,23 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/Wombat'
 " Yank history navigation
 Plug 'vim-scripts/YankRing.vim'
-
+" Arduino Syntax
+Plug 'sudar/vim-arduino-syntax'
+" Platformio Support
+Plug 'coddingtonbear/neomake-platformio'
 " Tell vim-plug we finished declaring plugins, so it can load them
+Plug 'tweekmonster/django-plus.vim'
+" add words to fill the space 
+Plug 'vim-scripts/loremipsum'
+" With bufexplorer, you can quickly and easily switch between buffers by using
+" the one of the default public interfaces: 
+Plug 'jlanzarotta/bufexplorer'
+
+" The Most Recently Used (MRU) plugin provides an easy access to a list of 
+" recently opened/edited files in Vim. This plugin automatically stores the 
+" file names as you open/edit them in Vim.
+Plug 'yegappan/mru'
+
 call plug#end()
 
 
@@ -203,7 +227,7 @@ let Tlist_Exit_OnlyWindow=1
 " let Tlist_Show_Menu=1
 " Taglist auto start
 " let Tlist_Auto_Open=1
-let Tlist_WinWidth = 32
+let Tlist_WinWidth = 16
 " no vi-compatible
 set nocompatible
 
@@ -268,12 +292,6 @@ imap <M-Down> <ESC><c-w>j
 imap <C-J> <C-X><C-O>
 
 
-" ============================================================================
-" Ark
-" simple recursive grep
-nmap ,r :Ack
-nmap ,wr :Ack <cword><CR>
-
 
 " ============================================================================
 " autocompletion of files and commands behaves like shell
@@ -285,8 +303,12 @@ nmap ,wr :Ack <cword><CR>
 " Plugins settings and mappings
 " Edit them as you wish.
 " Run Python
-nnoremap <buffer> <F9> :w <CR> :exec '!python3' shellescape(@%, 1)<cr>
-nnoremap <buffer> <F10> :w <CR> :exec '!python3 -m pdb' shellescape(@%, 1)<cr>
+
+autocmd BufRead *.py nmap <F8> :w <Esc> G:r!python3 %<CR>`.
+autocmd filetype c nnoremap <F8> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype cpp nnoremap <F8> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd BufRead *.py nnoremap <buffer> <F9> :w <CR> :exec '!python3' shellescape(@%, 1)<CR>
+autocmd BufRead *.py nnoremap <buffer> <F10> :w <CR> :exec '!python3 -m pdb' shellescape(@%, 1)<CR>
 " AutoFormat
 noremap <F6> :Autoformat<CR>
 
@@ -325,7 +347,7 @@ nmap ,g :CtrlPBufTag<CR>
 " tags (symbols) in all files finder mapping
 nmap ,G :CtrlPBufTagAll<CR>
 " general code finder in all files mapping
-nmap ,f :CtrlPLine<CR>
+nmap ,f :Ag<CR>
 " recent files finder mapping
 nmap ,m :CtrlPMRUFiles<CR>
 " commands finder mapping
@@ -482,9 +504,9 @@ inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <F7> :YcmForceCompileAndDiagnostics<CR>	"force recomile with syntastic
-nnoremap <leader>lo :lopen<CR>	"open locationlist
-nnoremap <leader>lc :lclose<CR>	"close locationlist
+nnoremap <F7> :YcmForceCompileAndDiagnostics<CR>    "force recomile with syntastic
+nnoremap <leader>lo :lopen<CR>  "open locationlist
+nnoremap <leader>lc :lclose<CR> "close locationlist
 inoremap <leader><leader> <C-x><C-o>
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
@@ -495,9 +517,9 @@ let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'nerdtree' : 1,
-      \}
+            \ 'tagbar' : 1,
+            \ 'nerdtree' : 1,
+            \}
 " let g:UltiSnipsExpandTrigger="<tab>"
 " let g:UltiSnipsJumpForwardTrigger="<tab>"
 " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -511,7 +533,7 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " ============================================================================
-" Vim go 
+" Vim go
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -519,6 +541,25 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " let g:go_fmt_command = "goimports"
 
+
+" ============================================================================
+" bufExplorer plugin
+let g:bufExplorerDefaultHelp=0
+let g:bufExplorerShowRelativePath=1
+let g:bufExplorerFindActive=1
+let g:bufExplorerSortBy='name'
+nmap ,b :BufExplorer<cr>
+
+" ============================================================================
+
+" ============================================================================
+" MRU 
+let MRU_Max_Entries = 400
+map ,rf :MRU<CR>
+" ============================================================================
+" Confortable motion
+" noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+" noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 " ============================================================================
 " better backup, swap and undos storage
 set directory=~/.vim/dirs/tmp     " directory to place swap files in
