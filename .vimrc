@@ -4,7 +4,7 @@
 
 set encoding=utf-8
 set clipboard=unnamed
-set shortmess+=c 
+set shortmess+=c
 set mouse=a
 set backspace=indent,eol,start
 set guifont=Noto\ Mono\ for\ Powerline:h12
@@ -47,7 +47,7 @@ endif
 " when scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
 
-" Too hex Code 
+" Too hex Code
 nmap ,h :%! xxd <CR>
 nmap ,n :%! xxd -r <CR>
 
@@ -157,7 +157,7 @@ Plug 'othree/html5.vim'
 Plug 'jiangmiao/auto-pairs'
 " auto complete
 Plug 'Valloric/YouCompleteMe'
-"   
+"
 Plug 'plytophogy/vim-virtualenv'
 if has('python')
     " YAPF formatter for Python
@@ -177,17 +177,19 @@ Plug 'sudar/vim-arduino-syntax'
 Plug 'coddingtonbear/neomake-platformio'
 " Tell vim-plug we finished declaring plugins, so it can load them
 Plug 'tweekmonster/django-plus.vim'
-" add words to fill the space 
+" add words to fill the space
 Plug 'vim-scripts/loremipsum'
 " With bufexplorer, you can quickly and easily switch between buffers by using
-" the one of the default public interfaces: 
+" the one of the default public interfaces:
 Plug 'jlanzarotta/bufexplorer'
 
-" The Most Recently Used (MRU) plugin provides an easy access to a list of 
-" recently opened/edited files in Vim. This plugin automatically stores the 
+" The Most Recently Used (MRU) plugin provides an easy access to a list of
+" recently opened/edited files in Vim. This plugin automatically stores the
 " file names as you open/edit them in Vim.
 Plug 'yegappan/mru'
 
+Plug 'vim-latex/vim-latex'
+Plug  'xuhdev/vim-latex-live-preview'
 call plug#end()
 
 
@@ -530,6 +532,7 @@ let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags
 let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:ycm_python_binary_path = 'python'
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " ============================================================================
@@ -553,7 +556,7 @@ nmap ,b :BufExplorer<cr>
 " ============================================================================
 
 " ============================================================================
-" MRU 
+" MRU
 let MRU_Max_Entries = 400
 map ,rf :MRU<CR>
 " ============================================================================
@@ -581,3 +584,17 @@ endif
 if !isdirectory(&undodir)
     call mkdir(&undodir, "p")
 endif
+" ===========================================================================
+" Latex
+let g:tex_flavor='latex'
+autocmd filetype tex imap ∫ Tex_MathBF
+autocmd filetype tex imap ç Tex_MathCal
+autocmd filetype tex imap ¬ Tex_LeftRight
+autocmd filetype tex imap ˆ Tex_InsertItemOnThisLine
+" Preview 
+"-----------------latex live preview-------------------------
+autocmd filetype tex setl updatetime=1000
+let g:livepreview_previewer = 'open -a Skim'
+autocmd filetype tex :LLPStartPreview
+nmap <F7> :LLPStartPreview<CR>
+imap <F7> <ESC>:LLPStartPreview<CR>
