@@ -71,16 +71,10 @@ if vim_plug_just_installed
 endif
 
 
-" ============================================================================
-" Active plugins
-" You can disable or add new ones here:
 
-" this needs to be here, so vim-plug knows we are declaring the plugins we
-" want to use
+" ============================================================================
 call plug#begin('~/.vim/plugged')
-" theme
-Plug 'tpope/vim-vividchalk'
-" Ctags
+" Active plugintags
 Plug 'vim-scripts/taglist.vim'
 " Plugins from github repos:
 Plug 'Chiel92/vim-autoformat'
